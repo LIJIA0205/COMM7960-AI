@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body>
+  <main>
+<div id="example1">
+    <style> 
+        #example1 {
+            background-image: url(https://www.ifec.org.hk/sites/web/common/images/blog/mrs-chin/things-to-consider-before-getting-a-pet.jpg);
+            background-position: center;
+            background-size: cover;
+            padding: 150px;
+        }
+    </style>
+</div>
+
+<header class="site-header">
+    <div class="header-content">
+        <div class="branding">
+            <i class="fas fa-paw logo-icon"></i>
+            <h1 class="site-title">Pet School</h1>
+        </div>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="#about" class="nav-link"><i class="fas fa-paw"></i><span>About</span></a></li>
+                <li><a href="#courses" class="nav-link"><i class="fas fa-graduation-cap"></i><span>Courses</span></a></li>
+                <li><a href="#gallery" class="nav-link"><i class="fas fa-camera"></i><span>Gallery</span></a></li>
+                <li><a href="#contact" class="nav-link cta-button"><i class="fas fa-bone"></i><span>Contact</span></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="home">
+    <div class="hero">
+        <h2>Welcome to Pet School 🐶</h2>
+        <p>Your puppy's second home 💗. Learn. Play. Grow.</p>
+        <div class="video-wrapper">
+            <div class="floating-paws">
+                <i class="fas fa-paw"></i>
+                <i class="fas fa-bone"></i>
+                <i class="fas fa-paw"></i>
+            </div>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube-nocookie.com/embed/xP3yfWBWK24" class="underline" target="_blank">Click this URL</a>
+                    title="Pet Training Video"
+                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+                <div class="video-overlay"></div>
+            </div>
+        </div>
+    </div>
+</section>   
+
+<section id="about">
+    <div class="container">
+        <h2>Our Journey</h2>
+        <div class="mission-box">
+            <div class="paw-icon">
+                <i class="fas fa-paw"></i>
+            </div>
+            <div class="mission-content">
+                <p class="tagline">Where Tails Meet Success</p>
+                <div class="mission-grid">
+                    <div class="mission-item">
+                        <i class="fas fa-heart"></i>
+                        <p>Science-based training<br>with heart</p>
+                    </div>
+                    <div class="mission-item">
+                        <i class="fas fa-certificate"></i>
+                        <p>Certified positive<br>reinforcement methods</p>
+                    </div>
+                    <div class="mission-item">
+                        <i class="fas fa-home"></i>
+                        <p>Home-like environment<br>for stress-free learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="pet-slideshow">
+          <div class="container">
+            
+            <div class="slideshow-container">
+              <!-- 幻灯片项 -->
+              <div class="mySlides fade">
+                <div class="bone-frame">
+                  <img src="https://freedomservicedogs.org/wp-content/uploads/2022/03/2020-prison-program-2048x693.png" style="width:100%">
+                </div>
+                <div class="paw-watermark"><i class="fas fa-paw"></i></div>
+              </div>
+        
+              <div class="mySlides fade">
+                <div class="bone-frame">
+                  <img src="https://freedomservicedogs.org/wp-content/uploads/2022/03/9_3-2048x1252.png" style="width:100%">
+                </div>
+                <div class="paw-watermark"><i class="fas fa-bone"></i></div>
+              </div>
+        
+              <!-- 导航箭头 -->
+              <a class="prev bone-arrow">❮</a>
+              <a class="next bone-arrow">❯</a>
+            </div>
+        
+            <!-- 指示点 -->
+            <div class="dots-container">
+              <span class="dot"></span> 
+              <span class="dot"></span> 
+            </div>
+          </div>
+        </section>
+
+        <script>
+          let slideIndex = 0;
+          showSlides();
+          
+          function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            // 隐藏所有幻灯片
+            for (let i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+            }
+            
+            // 更新索引
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}  
+            
+            // 更新指示点
+            for (let i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active-dot", "");
+            }
+            
+            // 显示当前幻灯片
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active-dot";
+            
+            // 设置自动播放
+            setTimeout(showSlides, 5000); 
+          }
+          
+          // 手动控制
+          function plusSlides(n) {
+            slideIndex += n;
+            let slides = document.getElementsByClassName("mySlides");
+            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex < 1) {slideIndex = slides.length}
+            showSlides();
+          }
+          
+          // 绑定事件
+          document.querySelector('.prev').addEventListener('click', () => plusSlides(-1));
+          document.querySelector('.next').addEventListener('click', () => plusSlides(1));
+          
+          // 点击指示点切换
+          document.querySelectorAll('.dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+              slideIndex = index;
+              showSlides();
+            });
+          });
+          </script>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2015 - Humble Beginnings</h3>
+                    <p>Started in a backyard with 3 enthusiastic puppies</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2018 - First Certification</h3>
+                    <p>Received professional training certification</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>2023 - 1000+ Graduates</h3>
+                    <p>Celebrated our 1000th successfully trained pet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="courses">
+    <div class="container">
+      <h2>Our Paw-some Programs</h2>
+      <div class="course-grid">
+        <!-- 基础服从课程 -->
+        <div class="course-card">
+          <div class="card-front">
+            <div class="popular-tag">🔥 Hot!</div>
+            <div class="course-icon">🐾</div>
+            <h3>Basic Obedience</h3>
+            <p>Foundation for well-behaved companions</p>
+            <button class="btn">View Details</button>
+          </div>
+          <div class="card-back">
+            <h4>You'll Learn:</h4>
+            <ul>
+              <li>Sit/Stay commands</li>
+              <li>Leash walking</li>
+              <li>Socialization basics</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- 敏捷训练课程 -->
+        <div class="course-card">
+          <div class="card-front">
+            <div class="course-icon">⏱️</div>
+            <h3>Agility Training</h3>
+            <p>Fun obstacle courses for energetic pups</p>
+            <button class="btn">View Details</button>
+          </div>
+          <div class="card-back">
+            <h4>You'll Learn:</h4>
+            <ul>
+              <li>Tunnel navigation</li>
+              <li>Jump techniques</li>
+              <li>Timing coordination</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- 服务犬课程 -->
+        <div class="course-card">
+          <div class="card-front">
+            <div class="course-icon">🦮</div>
+            <h3>Service Dog Prep</h3>
+            <p>Specialized assistance training</p>
+            <button class="btn">View Details</button>
+          </div>
+          <div class="card-back">
+            <h4>You'll Learn:</h4>
+            <ul>
+              <li>Task-specific skills</li>
+              <li>Public access manners</li>
+              <li>Stress management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="gallery">
+    <div class="container">
+      <h2>Happy Tails Gallery</h2>
+      <div class="photo-grid">
+
+        <div class="photo-card">
+          <img src="http://5b0988e595225.cdn.sohucs.com/images/20191024/8fa4870023b64ecf9002210bcbf85565.jpeg">
+          <div class="photo-caption">
+            <h3>Buddy</h3>
+            <p>Mastered 15 commands in 6 weeks</p>
+            <div class="achievement-badge">Top Student 2024</div>
+          </div>
+        </div>
+  
+        <div class="photo-card">
+          <img src="http://5b0988e595225.cdn.sohucs.com/images/20200306/bed259fd54ba486b9957ffa8345af36b.jpeg">
+          <div class="photo-caption">
+            <h3>Luna</h3>
+            <p>Agility course record holder</p>
+            <div class="achievement-badge">Speed Star</div>
+          </div>
+        </div>
+  
+        <div class="photo-card">
+          <img src="https://cdn.prod.website-files.com/60d196db74a1e36ff16ebd5d/650019e7c1ed15f956bbd95f_pontus-wellgraf-Kr29K3_c28A-unsplash%20(1).jpg">
+          <div class="photo-caption">
+            <h3>Max</h3>
+            <p>Certified assistance companion</p>
+            <div class="achievement-badge">Hero Pup</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+      <div class="w3-container w3-margin-top">
+        <h2>Puppies in training</h2>
+      </div>
+      <div class="w3-row-padding w3-text-white w3-large">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="http://www.opovets.co.nz/portals/5/images/obedience.jpg?ver=2016-10-14-103122-817" alt="Basic Obedience" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Basic Obedience</span>
+          </div>
+        </div>
+        <div class="w3-half">
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half w3-margin-bottom">
+              <div class="w3-display-container">
+                <img src="https://images.squarespace-cdn.com/content/v1/6094e5fed9c3e166798b7961/5c5d5b2c-714a-4829-a9b0-a05c54cc81f5/dog+obedience+school+Portland.jpg?format=2500w" alt="Basic Obedience" style="width:100%">
+                <span class="w3-display-bottomleft w3-padding">Basic Obedience</span>
+              </div>
+            </div>
+            <div class="w3-half w3-margin-bottom">
+              <div class="w3-display-container">
+                <img src="https://www.ellevetsciences.com/wp-content/uploads/2023/07/10-Benefits-of-Agility-Training-for-Dogs.jpg" style="width:100%">
+                <span class="w3-display-bottomleft w3-padding">Agility Training</span>
+              </div>
+            </div>
+          </div>
+          <div class="w3-row-padding" style="margin:0 -16px">
+            <div class="w3-half w3-margin-bottom">
+              <div class="w3-display-container">
+                <img src="https://www.dogster.com/wp-content/uploads/2024/03/white-and-brown-dog-running-between-pipes_Murilo-Viviani_Unsplash.jpg" alt="Agility Training" style="width:100%">
+                <span class="w3-display-bottomleft w3-padding">Agility Training</span>
+              </div>
+            </div>
+            <div class="w3-half w3-margin-bottom">
+              <div class="w3-display-container">
+                <img src="https://images.squarespace-cdn.com/content/v1/61b0d493bb7a355e54250414/cf8439cd-da5e-4fd3-b06f-10633090b8ce/svc1.jpg?format=1500w" alt="Servive Dog Training" style="width:100%">
+                <span class="w3-display-bottomleft w3-padding">Servive Dog Training</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<section id="contact">
+  <div class="container">
+      <h2>Contact Us</h2>
+      <p class="highlight-text">Can't wait to see you and your puppy!</p>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker accent-icon"></i>
+          <span>Kowloon Tong, HK</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone accent-icon"></i>
+          <span>+852 151515</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope accent-icon"></i>
+          <span>mail@mail.com</span>
+        </div>
+      </div>
+  
+      <form action="#" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send</button>
+      </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+      <p>&copy; 2025 Pet School. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
